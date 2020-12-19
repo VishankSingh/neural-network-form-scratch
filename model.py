@@ -49,5 +49,25 @@ for epoch in range(30000):
 
 inputs = training_set
 
+XW = np.dot(inputs, weights) + bias
+z= sigmoid(XW)
 
+error = z - labels
+
+slope = inputs * dcost * dpred
+
+dcost = error
+dpred = sigmoid_derivative(z)
+z_del = dcost * dpred
+inputs = training_set.T
+weights = weights - lr*np.dot(inputs, z_del)
+
+for num in z_del:
+    bias = bias - lr*num
+    
+    
+    
+    
+    
+    
 
