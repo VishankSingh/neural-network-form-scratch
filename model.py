@@ -62,8 +62,10 @@ inputs = training_set
 XW = np.dot(inputs, weights) + bias
 z= sigmoid(XW)
 
+#Error
 error = z - labels
 
+#Determining slope
 slope = inputs * dcost * dpred
 
 dcost = error
