@@ -30,5 +30,24 @@ def sigmoid(x):
 
 def sigmoid_derivative(x):
     return sigmoid(x)*(1-sigmoid(x))
-  
-  
+ 
+
+
+for epoch in range(30000):
+    inputs = training_set
+    XW = np.dot(inputs, weights) + bias
+    z = sigmoid(XW)
+    error = z - labels
+    print(error.sum())
+    dcost = error
+    dpred = sigmoid_derivative(z)
+    z_del = dcost * dpred
+    inputs = training_set.T
+    weights = weights - lr*np.dot(inputs, z_del)
+    for num in z_del:
+        bias = bias - lr*num
+
+inputs = training_set
+
+
+
