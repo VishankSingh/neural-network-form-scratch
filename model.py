@@ -38,7 +38,7 @@ def sigmoid_derivative(x):
     return sigmoid(x)*(1-sigmoid(x))
  
 
-
+#Training the model
 for epoch in range(30000):
     inputs = training_set
     XW = np.dot(inputs, weights) + bias
@@ -54,6 +54,10 @@ for epoch in range(30000):
         bias = bias - lr*num
 
 inputs = training_set
+
+
+
+
 
 XW = np.dot(inputs, weights) + bias
 z= sigmoid(XW)
