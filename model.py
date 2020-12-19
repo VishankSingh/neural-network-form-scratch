@@ -66,7 +66,11 @@ for num in z_del:
     bias = bias - lr*num
     
     
-    
+for i in training_set:
+    single_pt = np.array(i)
+    result = sigmoid(np.dot(single_pt, weights) + bias)
+    print(f'{result}\nRounded result: {np.around(result)}\n')
+  
     
     
     
