@@ -58,7 +58,7 @@ inputs = training_set
 
 
 
-
+#Feed forward
 XW = np.dot(inputs, weights) + bias
 z= sigmoid(XW)
 
