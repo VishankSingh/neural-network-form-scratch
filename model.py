@@ -43,4 +43,4 @@ for epoch in range(EPOCHS):
         bias = bias - LR*num
         
         
-
+inputs = training_set
