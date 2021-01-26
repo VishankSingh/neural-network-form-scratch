@@ -28,4 +28,19 @@ def sigmoid_derivative(x):
     return sigmoid(x)*(1-sigmoid(x))
   
   
+#Training the model
+for epoch in range(EPOCHS):
+    inputs = training_set
+    z = np.dot(inputs, weights) + bias
+    prediction = sigmoid(z)
+    error = prediction - labels
+    
+    print(f"Epoch {epoch+1}/{EPOCHS} \n  Error: \n{error}\n")
+    change = error * sigmoid_derivative(prediction)
+    inputs = training_set.T
+    weights = weights - LR*np.dot(inputs, change)
+    for num in change:
+        bias = bias - LR*num
+        
+        
 
