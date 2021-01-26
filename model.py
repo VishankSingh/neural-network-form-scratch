@@ -43,4 +43,21 @@ for epoch in range(EPOCHS):
         bias = bias - LR*num
         
         
+#Feed forward
 inputs = training_set
+XW = np.dot(inputs, weights) + bias
+prediction = sigmoid(XW)
+
+#Error
+error = prediction - labels
+
+
+change = error * sigmoid_derivative(prediction)
+inputs = training_set.T
+weights = weights - LR*np.dot(inputs, change)
+
+for num in change:
+    bias = bias - LR*num
+    
+    
+
