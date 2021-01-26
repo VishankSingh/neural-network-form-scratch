@@ -35,7 +35,7 @@ for epoch in range(EPOCHS):
     prediction = sigmoid(z)
     error = prediction - labels
     
-    print(f"Epoch {epoch+1}/{EPOCHS} \n  Error: \n{error}\n")
+    print(f"Epoch {epoch+1}/{EPOCHS} \n  Error: \n{error}\n\n")
     change = error * sigmoid_derivative(prediction)
     inputs = training_set.T
     weights = weights - LR*np.dot(inputs, change)
