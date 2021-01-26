@@ -61,3 +61,8 @@ for num in change:
     
     
 
+#Predicting outcomes
+for i in training_set:
+    single_pt = np.array(i)
+    result = sigmoid(np.dot(single_pt, weights) + bias)
+    print(f'  Predicted result: {result}\n  Rounded result: {np.around(result)}\n')
